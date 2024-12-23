@@ -1,31 +1,45 @@
 {
-    "expo": {
-        "name": "my-app",
-        "slug": "my-app",
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "newArchEnabled": true,
-        "icon": "./assets/icon.png",
-        "scheme": "simplemeditation",
-        "userInterfaceStyle": "light",
-        "splash": {
-            "image": "./assets/simpleMeditationLogo.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
-        },
-        "assetBundlePatterns": ["**/*"],
-        "ios": {
-            "supportsTablet": true
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/adaptive-icon.png",
-                "backgroundColor": "#ffffff"
-            }
-        },
-        "web": {
-            "favicon": "./assets/favicon.png"
-        },
-        "plugins": ["expo-router", "expo-font"]
+  "expo": {
+    "name": "my-app",
+    "slug": "my-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "newArchEnabled": true,
+    "icon": "./assets/icon.png",
+    "scheme": "simplemeditation",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/simpleMeditationLogo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "de.cmg.simple_meditation_app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "cae16a23-538f-4f2e-8dff-d223029a11fd"
+      }
     }
+  }
 }
