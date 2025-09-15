@@ -107,7 +107,7 @@ const Page = () => {
                         onPress={() => router.back()}
                         className="absolute top-16 left-6 z-10"
                     >
-                        <AntDesign name="leftcircleo" size={50} color="white" />
+                        <AntDesign name="left-circle" size={50} color="white" />
                     </Pressable>
 
                     <View className="flex-1 justify-center">
