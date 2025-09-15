@@ -11,9 +11,10 @@ import Animated, {
     withSpring,
 } from "react-native-reanimated";
 
-import beachImage from "@/assets/meditation-images/beach.webp";
+
 
 const App = () => {
+    let beachImage = require("@/assets/meditation-images/beach.webp")
     const router = useRouter();
 
     return (
