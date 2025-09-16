@@ -3,18 +3,23 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import Content from "./Content";
 
-const AppGradient = ({
-    children,
-    colors,
-}: {
-    children: any;
+interface AppGradientProps {
+    children: React.ReactNode;
     colors: string[];
-}) => {
+}
+
+const AppGradient = ({ children, colors }: AppGradientProps) => {
     return (
-        <LinearGradient colors={colors} className="flex-1">
+        <LinearGradient colors={colors} style={styles.gradient}>
             <Content>{children}</Content>
         </LinearGradient>
     );
 };
+
+const styles = StyleSheet.create({
+    gradient: {
+        flex: 1,
+    },
+});
 
 export default AppGradient;
