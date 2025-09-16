@@ -1,44 +1,34 @@
-import { View, Text, Image, ImageBackground } from "react-native";
-import React from "react";
+import { View, Text, Image, ImageBackground, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import CustomButton from "@/components/CustomButton";
 import AppGradient from "@/components/AppGradient";
 import { useRouter } from "expo-router";
-import Animated, {
-    FadeInDown,
-    FadeInUp,
-    withSpring,
-} from "react-native-reanimated";
-
-
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 const App = () => {
-    let beachImage = require("@/assets/meditation-images/beach.webp")
+    const beachImage = require("@/assets/meditation-images/beach.webp");
     const router = useRouter();
 
     return (
-        <View className="flex-1">
+        <View style={styles.container}>
             <ImageBackground
                 source={beachImage}
                 resizeMode="cover"
-                className="flex-1"
+                style={styles.imageBackground}
             >
-                <AppGradient
-                    // Background Linear Gradient
-                    colors={["rgba(0,0,0,0.4)", "rgba(0,0,0,0.8)"]}
-                >
-                    <SafeAreaView className="flex flex-1 px-1 justify-between">
+                <AppGradient colors={["rgba(0,0,0,0.4)", "rgba(0,0,0,0.8)"]}>
+                    <SafeAreaView style={styles.safeArea}>
                         <Animated.View
                             entering={FadeInDown.delay(300)
                                 .mass(0.5)
                                 .stiffness(80)
-                                .springify(20)}
+                                .damping(10)}
                         >
-                            <Text className="text-center text-white font-bold text-4xl">
+                            <Text style={styles.title}>
                                 Simple Meditation
                             </Text>
-                            <Text className="text-center text-white font-regular text-2xl mt-3">
+                            <Text style={styles.subtitle}>
                                 Simplifying Meditation for Everyone
                             </Text>
                         </Animated.View>
@@ -47,7 +37,7 @@ const App = () => {
                             entering={FadeInDown.delay(300)
                                 .mass(0.5)
                                 .stiffness(80)
-                                .springify(20)}
+                                .damping(10)}
                         >
                             <CustomButton
                                 onPress={() => router.push("/nature-meditate")}
@@ -62,5 +52,32 @@ const App = () => {
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    imageBackground: {
+        flex: 1,
+    },
+    safeArea: {
+        flex: 1,
+        paddingHorizontal: 4,
+        justifyContent: "space-between",
+    },
+    title: {
+        textAlign: "center",
+        color: "white",
+        fontWeight: "bold",
+        fontSize: 36,
+    },
+    subtitle: {
+        textAlign: "center",
+        color: "white",
+        fontWeight: "400",
+        fontSize: 24,
+        marginTop: 12,
+    },
+});
 
 export default App;

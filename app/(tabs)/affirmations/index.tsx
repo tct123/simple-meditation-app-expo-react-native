@@ -1,5 +1,4 @@
 import GuidedAffirmationsGallery from "@/components/GuidedAffirmationsGallery";
-import AFFIRMATION_GALLERY from "@/constants/affirmation-gallary";
 import images from "@/constants/affirmation-images";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
@@ -11,19 +10,17 @@ const Page = () => {
     const insets = useSafeAreaInsets();
 
     return (
-        <View className="flex-1">
+        <View style={styles.container}>
             <LinearGradient
-                // Background Linear Gradient
                 colors={["#2e1f58", "#54426b", "#a790af"]}
-                className="px-5"
-                style={{ paddingTop: insets.top }}
+                style={[styles.gradient, { paddingTop: insets.top, paddingHorizontal: 20 }]} // px-5 = 20px
             >
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <Text className="text-zinc-50 text-3xl font-bold">
+                    <Text style={styles.heading}>
                         Change your beliefs with affirmations
                     </Text>
                     <View>
-                        {AFFIRMATION_GALLERY.map((g) => (
+                        {galleryData.map((g) => (
                             <GuidedAffirmationsGallery
                                 key={g.title}
                                 title={g.title}
@@ -42,176 +39,64 @@ const galleryData = [
     {
         title: "Positivity",
         data: [
-            {
-                id: 1,
-                name: "test",
-                image: images.californiaBackyardOne,
-            },
-            {
-                id: 2,
-                name: "test",
-                image: images.californiaBackyardTwo,
-            },
-            {
-                id: 3,
-                name: "test",
-                image: images.californiaBackyardThree,
-            },
-            {
-                id: 4,
-                name: "test",
-                image: images.californiaBackyardFour,
-            },
+            { id: 1, name: "test", image: images.californiaBackyardOne },
+            { id: 2, name: "test", image: images.californiaBackyardTwo },
+            { id: 3, name: "test", image: images.californiaBackyardThree },
+            { id: 4, name: "test", image: images.californiaBackyardFour },
         ],
     },
     {
         title: "Reduce Anxiety",
         data: [
-            {
-                id: 1,
-                name: "test",
-                image: images.englishCountrysideOne,
-            },
-            {
-                id: 2,
-                name: "test",
-                image: images.englishCountrysideTwo,
-            },
-            {
-                id: 3,
-                name: "test",
-                image: images.englishCountrysideThree,
-            },
-            {
-                id: 4,
-                name: "test",
-                image: images.englishCountrysideFour,
-            },
+            { id: 1, name: "test", image: images.englishCountrysideOne },
+            { id: 2, name: "test", image: images.englishCountrysideTwo },
+            { id: 3, name: "test", image: images.englishCountrysideThree },
+            { id: 4, name: "test", image: images.englishCountrysideFour },
         ],
     },
     {
         title: "Success",
         data: [
-            {
-                id: 1,
-                name: "test",
-                image: images.mountainMeditateOne,
-            },
-            {
-                id: 2,
-                name: "test",
-                image: images.mountainMeditateTwo,
-            },
-            {
-                id: 3,
-                name: "test",
-                image: images.mountainMeditateThree,
-            },
-            {
-                id: 4,
-                name: "test",
-                image: images.mountainMeditateFour,
-            },
+            { id: 1, name: "test", image: images.mountainMeditateOne },
+            { id: 2, name: "test", image: images.mountainMeditateTwo },
+            { id: 3, name: "test", image: images.mountainMeditateThree },
+            { id: 4, name: "test", image: images.mountainMeditateFour },
         ],
     },
     {
         title: "Self-Belief",
         data: [
-            {
-                id: 1,
-                name: "test",
-                image: images.nightSkyOne,
-            },
-            {
-                id: 2,
-                name: "test",
-                image: images.nightSkyTwo,
-            },
-            {
-                id: 3,
-                name: "test",
-                image: images.nightSkyThree,
-            },
-            {
-                id: 4,
-                name: "test",
-                image: images.nightSkyFour,
-            },
+            { id: 1, name: "test", image: images.nightSkyOne },
+            { id: 2, name: "test", image: images.nightSkyTwo },
+            { id: 3, name: "test", image: images.nightSkyThree },
+            { id: 4, name: "test", image: images.nightSkyFour },
         ],
     },
     {
         title: "Mental Health",
         data: [
-            {
-                id: 1,
-                name: "test",
-                image: images.oregonOne,
-            },
-            {
-                id: 2,
-                name: "test",
-                image: images.oregonTwo,
-            },
-            {
-                id: 3,
-                name: "test",
-                image: images.oregonThree,
-            },
-            {
-                id: 4,
-                name: "test",
-                image: images.oregonFour,
-            },
+            { id: 1, name: "test", image: images.oregonOne },
+            { id: 2, name: "test", image: images.oregonTwo },
+            { id: 3, name: "test", image: images.oregonThree },
+            { id: 4, name: "test", image: images.oregonFour },
         ],
     },
     {
         title: "Law of Attraction",
         data: [
-            {
-                id: 1,
-                name: "test",
-                image: images.relaxingRiverOne,
-            },
-            {
-                id: 2,
-                name: "test",
-                image: images.relaxingRiverTwo,
-            },
-            {
-                id: 3,
-                name: "test",
-                image: images.relaxingRiverThree,
-            },
-            {
-                id: 4,
-                name: "test",
-                image: images.relaxingRiverFour,
-            },
+            { id: 1, name: "test", image: images.relaxingRiverOne },
+            { id: 2, name: "test", image: images.relaxingRiverTwo },
+            { id: 3, name: "test", image: images.relaxingRiverThree },
+            { id: 4, name: "test", image: images.relaxingRiverFour },
         ],
     },
     {
         title: "Limiting Beliefs",
         data: [
-            {
-                id: 1,
-                name: "test",
-                image: images.tuscannyOne,
-            },
-            {
-                id: 2,
-                name: "test",
-                image: images.tuscannyTwo,
-            },
-            {
-                id: 3,
-                name: "test",
-                image: images.tuscannyThree,
-            },
-            {
-                id: 4,
-                name: "test",
-                image: images.tuscannyFour,
-            },
+            { id: 1, name: "test", image: images.tuscannyOne },
+            { id: 2, name: "test", image: images.tuscannyTwo },
+            { id: 3, name: "test", image: images.tuscannyThree },
+            { id: 4, name: "test", image: images.tuscannyFour },
         ],
     },
 ];
@@ -220,8 +105,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    background: {
+    gradient: {
         flex: 1,
+    },
+    heading: {
+        color: "#fafafa", // text-zinc-50
+        fontSize: 28,     // text-3xl
+        fontWeight: "bold",
+        marginBottom: 16,
     },
 });
 

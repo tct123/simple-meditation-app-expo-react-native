@@ -1,20 +1,49 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, StyleSheet } from "react-native";
 import React, { useState } from "react";
 
 const SearchInput = () => {
     const [query, setQuery] = useState("");
+    const [isFocused, setIsFocused] = useState(false);
 
     return (
-        <View className="flex flex-row items-center space-x-4 w-full h-16 px-4 bg-black-100 rounded-2xl border-2 border-black-200 focus:border-secondary">
+        <View style={[
+            styles.container,
+            isFocused && styles.containerFocused
+        ]}>
             <TextInput
-                className="text-base mt-0.5 text-white flex-1"
+                style={styles.input}
                 value={query}
                 placeholder="Search a video topic"
                 placeholderTextColor="#CDCDE0"
-                onChangeText={(e: any) => setQuery(e)}
+                onChangeText={(text) => setQuery(text)}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
             />
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: "row",
+        alignItems: "center",
+        width: "100%",
+        height: 64,
+        paddingHorizontal: 16,
+        backgroundColor: "rgba(25, 25, 25, 0.1)",
+        borderRadius: 24,
+        borderWidth: 2,
+        borderColor: "rgba(50, 50, 50, 0.2)",
+    },
+    containerFocused: {
+        borderColor: "#60A5FA", // secondary (Beispielwert)
+    },
+    input: {
+        fontSize: 16,
+        marginTop: 2,
+        color: "white",
+        flex: 1,
+    },
+});
 
 export default SearchInput;
