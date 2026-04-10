@@ -3,7 +3,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import React, { useContext, useEffect, useState } from "react";
 import { ImageBackground, Pressable, Text, View, StyleSheet } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { Audio } from "expo-av";
+import { Audio } from "expo-audio";
 import CustomButton from "@/components/CustomButton";
 import MEDITATION_IMAGES from "@/constants/meditation-images";
 import { TimerContext } from "@/context/TimerContext";
@@ -32,14 +32,14 @@ const Page = () => {
         return () => {
             clearTimeout(timerId);
         };
-    }, [secondsRemaining, isMeditating]);
+    }, [secondsRemaining, isMeditating, isPlayingAudio, audioSound, setDuration]);
 
     useEffect(() => {
         return () => {
             setDuration(10);
             audioSound?.unloadAsync();
         };
-    }, [audioSound]);
+    }, [audioSound, setDuration]);
 
     const initializeSound = async () => {
         const audioFileName = MEDITATION_DATA[Number(id) - 1].audio;
