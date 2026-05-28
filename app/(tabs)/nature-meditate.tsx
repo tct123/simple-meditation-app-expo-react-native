@@ -10,9 +10,9 @@ import {
     Text,
     View,
 } from "react-native";
-import MEDITATION_IMAGES from "@/constants/meditation-images";
-import { MEDITATION_DATA, MeditationType } from "@/constants/MeditationData";
-import AppGradient from "@/components/AppGradient";
+import MEDITATION_IMAGES from "../../constants/meditation-images";
+import { MEDITATION_DATA, MeditationType } from "../../constants/MeditationData";
+import AppGradient from "../../components/AppGradient";
 
 const Page = () => {
     return (

@@ -7,11 +7,6 @@
         "icon": "./assets/icon.png",
         "scheme": "simplemeditation",
         "userInterfaceStyle": "light",
-        "splash": {
-            "image": "./assets/simpleMeditationLogo.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
-        },
         "assetBundlePatterns": [
             "**/*"
         ],
@@ -28,9 +23,19 @@
             "favicon": "./assets/favicon.png"
         },
         "plugins": [
+            [
+                "expo-splash-screen",
+                {
+                    "image": "./assets/simpleMeditationLogo.png",
+                    "resizeMode": "contain",
+                    "backgroundColor": "#ffffff"
+                }
+            ],
             "expo-router",
             "expo-font",
-            "expo-audio"
+            "expo-audio",
+            "expo-status-bar",
+            "expo-asset"
         ]
     }
 }

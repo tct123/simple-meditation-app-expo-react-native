@@ -1,9 +1,9 @@
 import { AntDesign } from "@expo/vector-icons";
-import { GalleryPreviewData } from "@/constants/models/AffirmationCategory";
+import { GalleryPreviewData } from "../../../constants/models/AffirmationCategory";
 import { router, useLocalSearchParams } from "expo-router";
 import { View, Text, ImageBackground, Pressable, ScrollView, StyleSheet } from "react-native";
-import AFFIRMATION_GALLERY from "@/constants/affirmation-gallary";
-import AppGradient from "@/components/AppGradient";
+import AFFIRMATION_GALLERY from "../../../constants/affirmation-gallary";
+import AppGradient from "../../../components/AppGradient";
 import React, { useEffect, useState } from "react";
 
 const AffirmationPractice = () => {
@@ -28,7 +28,7 @@ const AffirmationPractice = () => {
                 return;
             }
         }
-    }, []);
+    }, [itemId]);
 
     return (
         <View style={styles.container}>

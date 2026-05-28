@@ -1,8 +1,8 @@
-import { View, Text, Image, ImageBackground, StyleSheet } from "react-native";
+import { View, Text, ImageBackground, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import CustomButton from "@/components/CustomButton"; //@/components/CustomButton
-import AppGradient from "@/components/AppGradient"; //@/components/AppGradient
+import CustomButton from "../components/CustomButton"; //@/components/CustomButton
+import AppGradient from "../components/AppGradient"; //@/components/AppGradient
 import { useRouter } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
 

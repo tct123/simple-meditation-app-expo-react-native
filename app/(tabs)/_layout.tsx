@@ -1,6 +1,6 @@
 import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import Colors from "@/constants/Colors";
+import Colors from "../../constants/Colors";
 import React from "react";
 
 export const unstable_settings = {

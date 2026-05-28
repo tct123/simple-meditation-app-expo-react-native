@@ -1,7 +1,6 @@
 import { Image, View, Text, FlatList, Pressable, StyleSheet } from "react-native";
-import images from "@/constants/affirmation-images";
-import { GalleryPreviewData, Product } from "@/constants/models/Product";
 import { Link } from "expo-router";
+import { GalleryPreviewData } from "../constants/models/AffirmationCategory";
 
 interface GuidedAffirmationsGalleryProps {
     title: string;
