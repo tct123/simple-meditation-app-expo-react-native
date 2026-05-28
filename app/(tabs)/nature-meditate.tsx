@@ -38,7 +38,7 @@ const Page = () => {
                                 style={styles.pressableItem}
                             >
                                 <ImageBackground
-                                    source={MEDITATION_IMAGES[item.id - 1]}
+                                    source={{ uri: MEDITATION_IMAGES[item.id - 1] }}
                                     resizeMode="cover"
                                     style={styles.backgroundImage}
                                 >

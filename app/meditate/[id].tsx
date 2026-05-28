@@ -77,7 +77,7 @@ const Page = () => {
     return (
         <View style={styles.container}>
             <ImageBackground
-                source={MEDITATION_IMAGES[Number(id) - 1]}
+                source={{ uri: MEDITATION_IMAGES[Number(id) - 1] }}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >

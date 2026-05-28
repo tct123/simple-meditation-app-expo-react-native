@@ -7,13 +7,13 @@ import { useRouter } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 const App = () => {
-    const beachImage = require("@/assets/meditation-images/beach.webp");
+    const beachImage = "/assets/meditation-images/beach.webp";
     const router = useRouter();
 
     return (
         <View style={styles.container}>
             <ImageBackground
-                source={beachImage}
+                source={{ uri: beachImage }}
                 resizeMode="cover"
                 style={styles.imageBackground}
             >
